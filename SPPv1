@@ -1,5 +1,9 @@
 #This code is meant to harvest data from the SPP ISO. Specifically Day Ahead and Realtime data.
 #
-
+import datetime as dt
 import urllib
-import 
+import pandas as pd
+
+currentDate= dt.datetime.today().strftime("%m/%d/%Y")
+urllib.urlopen(
+

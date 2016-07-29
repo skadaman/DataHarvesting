@@ -1,0 +1,5 @@
+#This code is meant to harvest data from the SPP ISO. Specifically Day Ahead and Realtime data.
+#
+
+import urllib
+import 

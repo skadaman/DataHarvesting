@@ -1,9 +1,21 @@
 #This code is meant to harvest data from the SPP ISO. Specifically Day Ahead and Realtime data.
-#
-import datetime as dt
-import urllib
-import pandas as pd
+#This code works. It retrieves the file from SPP. Now it needs to be automated. Make file name  be an input variable through
+#the current days date. SPP uses a FTP to post files. 
+#This code reaches that FTP and downloads the file to the current directory.
+#FTP for SPP
+from ftplib import FTP
+SPPLink=FTP('pubftp.spp.org')
+SPPLink.login()
+SPPLink.cwd('/Markets/DA/LMP_By_BUS/2016/08/By_Day/')
+SPPLink.retrlines('LIST') 
+#works up to here
+def getfile():
+    filename='DA-LMP-B-201608010100.csv'
+    try:
+        ftp.retrbinary("RETR " + filename ,open(i, 'wb').write)
+    except:
+        print "Error"
+SPPLink.close()
+   
 
-currentDate= dt.datetime.today().strftime("%m/%d/%Y")
-urllib.urlopen(
 
